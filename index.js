@@ -5,7 +5,7 @@ let ranId = () => {
     let id = Math.floor(Math.random() * 100050)
     return id;
 }
-
+// Employee questions
 inquirer.prompt([
     // Manager
     {
@@ -29,7 +29,7 @@ inquirer.prompt([
         message: 'What is the managers ID number?',
         choices: [ranId(), ranId()]
     },
-// 
+// Engineer
     {
         type: 'input',
         name: 'Dependencies',
@@ -49,7 +49,7 @@ inquirer.prompt([
     }
 ])
     .then(data => {
-        fs.writeFileSync("./Dist/README.md", `
+        fs.writeFileSync("./Dist/team-profile.html", `
 # ${data.title}
 
 ## Description
