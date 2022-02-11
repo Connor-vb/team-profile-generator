@@ -85,7 +85,6 @@ inquirer.prompt([
     <title>Document</title>
 </head>
 <body>
-// MANAGER
     <div class="card employee-card">
       <div class="card-header">
           <h2 class="card-title">${data.mgrName}</h2>
@@ -100,7 +99,6 @@ inquirer.prompt([
       </div>
   </div>
 
-// ENGINEER
     <div class="card employee-card">
       <div class="card-header">
           <h2 class="card-title">${data.engine1}</h2>
@@ -115,7 +113,6 @@ inquirer.prompt([
       </div>
   </div>
 
-// INTERN
     <div class="card employee-card">
       <div class="card-header">
           <h2 class="card-title">${data.intern1}</h2>
@@ -129,6 +126,7 @@ inquirer.prompt([
           </ul>
       </div>
   </div>
+  
 </body>
 </html>
         `)
