@@ -10,22 +10,22 @@ inquirer.prompt([
     // Manager
     {
         type: 'input',
-        name: 'mgr-name',
+        name: 'mgrName',
         message: 'What is the managers name?'
     },
     {
         type: 'input',
-        name: 'mgr-onum',
+        name: 'mgrOnum',
         message: 'What is the managers office number?'
     },
     {
         type: 'input',
-        name: 'mgr-email',
+        name: 'mgrEmail',
         message: 'What is the managers email?'
     },
     {
         type: 'List',
-        name: 'mgr-id',
+        name: 'mgrId',
         message: 'What is the managers ID number?',
         choices: [ranId(), ranId()]
     },
@@ -37,20 +37,20 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'i1-email',
+        name: 'i1Email',
         message: 'What is this interns email?'
     },
     {
         type: 'input',
-        name: 'i1-school',
+        name: 'i1School',
         message: 'What school did this intern go to?'
     },
     {
         type: 'List',
-        name: 'i1-id',
+        name: 'i1Id',
         message: 'What is this employees id?',
         choices: [ranId(), ranId()]
-    }
+    },
 // Engineer 1
     {
         type: 'input',
@@ -59,17 +59,17 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'e1-email',
+        name: 'e1Email',
         message: 'What is this engineers email?'
     },
     {
         type: 'input',
-        name: 'e1-github',
+        name: 'e1Github',
         message: 'What is this engineers GitHub?'
     },
     {
         type: 'List',
-        name: 'e1-id',
+        name: 'e1Id',
         message: 'What is this employees id?',
         choices: [ranId(), ranId()]
     }
@@ -88,29 +88,29 @@ inquirer.prompt([
 // MANAGER
     <div class="card employee-card">
       <div class="card-header">
-          <h2 class="card-title">mary</h2>
+          <h2 class="card-title">${data.mgrName}</h2>
           <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
       </div>
       <div class="card-body">
           <ul class="list-group">
-              <li class="list-group-item">ID: bob</li>
-              <li class="list-group-item">Email: <a href="mailto:${data.mgr-email}">${data.mgr-email}</a></li>
-              <li class="list-group-item">Office number: sadfyey</li>
+              <li class="list-group-item">ID: ${data.mgrId}</li>
+              <li class="list-group-item">Email: <a href="mailto:${data.mgrEmail}">${data.mgrEmail}</a></li>
+              <li class="list-group-item">Office number: ${data.mgrOnum}</li>
           </ul>
       </div>
   </div>
-  
+
 // ENGINEER
     <div class="card employee-card">
       <div class="card-header">
-          <h2 class="card-title">mary</h2>
-          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+          <h2 class="card-title">${data.engine1}</h2>
+          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Engineer</h3>
       </div>
       <div class="card-body">
           <ul class="list-group">
-              <li class="list-group-item">ID: bob</li>
-              <li class="list-group-item">Email: <a href="mailto:${data.e1-email}">${data.e1-email}</a></li>
-              <li class="list-group-item">Office number: sadfyey</li>
+              <li class="list-group-item">ID: ${data.eqId}</li>
+              <li class="list-group-item">Email: <a href="mailto:${data.e1Email}">${data.e1Email}</a></li>
+              <li class="list-group-item">GitHub: ${data.e1Github}</li>
           </ul>
       </div>
   </div>
@@ -118,14 +118,14 @@ inquirer.prompt([
 // INTERN
     <div class="card employee-card">
       <div class="card-header">
-          <h2 class="card-title">mary</h2>
-          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+          <h2 class="card-title">${data.intern1}</h2>
+          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Intern</h3>
       </div>
       <div class="card-body">
           <ul class="list-group">
-              <li class="list-group-item">ID: bob</li>
-              <li class="list-group-item">Email: <a href="mailto:${data.i1-email}">${data.i1-email}</a></li>
-              <li class="list-group-item">Office number: sadfyey</li>
+              <li class="list-group-item">ID: ${data.i1Id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${data.i1Email}">${data.i1Email}</a></li>
+              <li class="list-group-item">School: ${data.i1School}</li>
           </ul>
       </div>
   </div>
