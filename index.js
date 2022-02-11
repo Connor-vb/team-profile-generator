@@ -75,28 +75,61 @@ inquirer.prompt([
     }
 ])
     .then(data => {
-        fs.writeFileSync("./Dist/team-profile.html", `
-# ${data.title}
+        fs.writeFileSync("./dist/team-profile.html", `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+// MANAGER
+    <div class="card employee-card">
+      <div class="card-header">
+          <h2 class="card-title">mary</h2>
+          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item">ID: bob</li>
+              <li class="list-group-item">Email: <a href="mailto:${data.mgr-email}">${data.mgr-email}</a></li>
+              <li class="list-group-item">Office number: sadfyey</li>
+          </ul>
+      </div>
+  </div>
+  
+// ENGINEER
+    <div class="card employee-card">
+      <div class="card-header">
+          <h2 class="card-title">mary</h2>
+          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item">ID: bob</li>
+              <li class="list-group-item">Email: <a href="mailto:${data.e1-email}">${data.e1-email}</a></li>
+              <li class="list-group-item">Office number: sadfyey</li>
+          </ul>
+      </div>
+  </div>
 
-## Description
-${data.Description}
-
-## GitHub
-${data.GitHub}
-
-## License
-${data.License}
-
-## Dependencies
-${data.Dependencies}
-
-## Contributions
-${data.Contributions}
-
-## Deployed Links
-
-
-## Init
-${data.Init}
+// INTERN
+    <div class="card employee-card">
+      <div class="card-header">
+          <h2 class="card-title">mary</h2>
+          <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
+      </div>
+      <div class="card-body">
+          <ul class="list-group">
+              <li class="list-group-item">ID: bob</li>
+              <li class="list-group-item">Email: <a href="mailto:${data.i1-email}">${data.i1-email}</a></li>
+              <li class="list-group-item">Office number: sadfyey</li>
+          </ul>
+      </div>
+  </div>
+</body>
+</html>
         `)
     })
