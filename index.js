@@ -29,23 +29,49 @@ inquirer.prompt([
         message: 'What is the managers ID number?',
         choices: [ranId(), ranId()]
     },
-// Engineer
+// intern 1
     {
         type: 'input',
-        name: 'Dependencies',
-        message: 'List any dependencies (if applicable)'
+        name: 'intern1',
+        message: 'What is this interns name?'
     },
     {
         type: 'input',
-        name: 'Contributions',
-        message: 'Who or what contributions were made?',
-        default: 'N/A'
+        name: 'i1-email',
+        message: 'What is this interns email?'
     },
     {
         type: 'input',
-        name: 'Init',
-        message: 'List any commands (if any) to start the project.',
-        default: 'N/A'
+        name: 'i1-school',
+        message: 'What school did this intern go to?'
+    },
+    {
+        type: 'List',
+        name: 'i1-id',
+        message: 'What is this employees id?',
+        choices: [ranId(), ranId()]
+    }
+// Engineer 1
+    {
+        type: 'input',
+        name: 'engine1',
+        message: 'What is this engineers name?'
+    },
+    {
+        type: 'input',
+        name: 'e1-email',
+        message: 'What is this engineers email?'
+    },
+    {
+        type: 'input',
+        name: 'e1-github',
+        message: 'What is this engineers GitHub?'
+    },
+    {
+        type: 'List',
+        name: 'e1-id',
+        message: 'What is this employees id?',
+        choices: [ranId(), ranId()]
     }
 ])
     .then(data => {
