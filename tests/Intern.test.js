@@ -1,7 +1,7 @@
-const Employee = require('../lib/Employee');
+const Intern = require('../lib/Intern');
 
 test("testing the getSchool function", function(){
     let school = "clown"
-    let Emp = new Employee(school) 
-    expect(Emp.school).toBe("clown")
+    let Int = new Intern('name', 'id', 'email', school) 
+    expect(Int.school).toBe("clown")
 })
