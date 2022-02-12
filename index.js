@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 let ranId = () => {
-    let id = Math.floor(Math.random() * 100050)
+    let id = Math.floor(Math.random() * 1000500)
     return id;
 }
 // Employee questions
@@ -24,10 +24,10 @@ inquirer.prompt([
         message: 'What is the managers email?'
     },
     {
-        type: 'List',
+        type: 'list',
         name: 'mgrId',
         message: 'What is the managers ID number?',
-        choices: [ranId(), ranId()]
+        choices: [ranId(), ranId(), ranId(), ranId()]
     },
 // intern 1
     {
@@ -46,10 +46,10 @@ inquirer.prompt([
         message: 'What school did this intern go to?'
     },
     {
-        type: 'List',
+        type: 'list',
         name: 'i1Id',
         message: 'What is this employees id?',
-        choices: [ranId(), ranId()]
+        choices: [ranId(), ranId(), ranId(), ranId()]
     },
 // Engineer 1
     {
@@ -68,10 +68,10 @@ inquirer.prompt([
         message: 'What is this engineers GitHub?'
     },
     {
-        type: 'List',
+        type: 'list',
         name: 'e1Id',
         message: 'What is this employees id?',
-        choices: [ranId(), ranId()]
+        choices: [ranId(), ranId(), ranId(), ranId()]
     }
 ])
     .then(data => {
@@ -106,7 +106,7 @@ inquirer.prompt([
       </div>
       <div class="card-body">
           <ul class="list-group">
-              <li class="list-group-item">ID: ${data.eqId}</li>
+              <li class="list-group-item">ID: ${data.e1Id}</li>
               <li class="list-group-item">Email: <a href="mailto:${data.e1Email}">${data.e1Email}</a></li>
               <li class="list-group-item">GitHub: ${data.e1Github}</li>
           </ul>
