@@ -1,81 +1,84 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+const inquirer = require("inquirer");
+const fs = require("fs");
 
 let ranId = () => {
-    let id = Math.floor(Math.random() * 1000500)
-    return id;
-}
+  let id = Math.floor(Math.random() * 1000500);
+  return id;
+};
 // Employee questions
-inquirer.prompt([
+inquirer
+  .prompt([
     // Manager
     {
-        type: 'input',
-        name: 'mgrName',
-        message: 'What is the managers name?'
+      type: "input",
+      name: "mgrName",
+      message: "What is the managers name?",
     },
     {
-        type: 'input',
-        name: 'mgrOnum',
-        message: 'What is the managers office number?'
+      type: "input",
+      name: "mgrOnum",
+      message: "What is the managers office number?",
     },
     {
-        type: 'input',
-        name: 'mgrEmail',
-        message: 'What is the managers email?'
+      type: "input",
+      name: "mgrEmail",
+      message: "What is the managers email?",
     },
     {
-        type: 'list',
-        name: 'mgrId',
-        message: 'What is the managers ID number?',
-        choices: [ranId(), ranId(), ranId(), ranId()]
+      type: "list",
+      name: "mgrId",
+      message: "What is the managers ID number?",
+      choices: [ranId(), ranId(), ranId(), ranId()],
     },
-// intern 1
+    // intern 1
     {
-        type: 'input',
-        name: 'intern1',
-        message: 'What is this interns name?'
-    },
-    {
-        type: 'input',
-        name: 'i1Email',
-        message: 'What is this interns email?'
+      type: "input",
+      name: "intern1",
+      message: "What is this interns name?",
     },
     {
-        type: 'input',
-        name: 'i1School',
-        message: 'What school did this intern go to?'
+      type: "input",
+      name: "i1Email",
+      message: "What is this interns email?",
     },
     {
-        type: 'list',
-        name: 'i1Id',
-        message: 'What is this employees id?',
-        choices: [ranId(), ranId(), ranId(), ranId()]
-    },
-// Engineer 1
-    {
-        type: 'input',
-        name: 'engine1',
-        message: 'What is this engineers name?'
+      type: "input",
+      name: "i1School",
+      message: "What school did this intern go to?",
     },
     {
-        type: 'input',
-        name: 'e1Email',
-        message: 'What is this engineers email?'
+      type: "list",
+      name: "i1Id",
+      message: "What is this employees id?",
+      choices: [ranId(), ranId(), ranId(), ranId()],
+    },
+    // Engineer 1
+    {
+      type: "input",
+      name: "engine1",
+      message: "What is this engineers name?",
     },
     {
-        type: 'input',
-        name: 'e1Github',
-        message: 'What is this engineers GitHub?'
+      type: "input",
+      name: "e1Email",
+      message: "What is this engineers email?",
     },
     {
-        type: 'list',
-        name: 'e1Id',
-        message: 'What is this employees id?',
-        choices: [ranId(), ranId(), ranId(), ranId()]
-    }
-])
-    .then(data => {
-        fs.writeFileSync("./dist/team-profile.html", `
+      type: "input",
+      name: "e1Github",
+      message: "What is this engineers GitHub?",
+    },
+    {
+      type: "list",
+      name: "e1Id",
+      message: "What is this employees id?",
+      choices: [ranId(), ranId(), ranId(), ranId()],
+    },
+  ])
+  .then((data) => {
+    fs.writeFileSync(
+      "./dist/team-profile.html",
+      `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +90,12 @@ inquirer.prompt([
     <title>Document</title>
 </head>
 <body>
-    <div class="card employee-card">
+   <header>
+    <h1><style> h1 { text-align: center; background-color: red; color: black; padding: 10px 0 10px 0;} </style>Employees</h1>
+   </header>
+   <div class="container">
+        <div class="row">
+    <div class="card employee-card col-sm">
       <div class="card-header">
           <h2 class="card-title">${data.mgrName}</h2>
           <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
@@ -101,7 +109,7 @@ inquirer.prompt([
       </div>
   </div>
 
-    <div class="card employee-card">
+    <div class="card employee-card col-sm">
       <div class="card-header">
           <h2 class="card-title">${data.engine1}</h2>
           <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Engineer</h3>
@@ -115,7 +123,7 @@ inquirer.prompt([
       </div>
   </div>
 
-    <div class="card employee-card">
+    <div class="card employee-card col-sm">
       <div class="card-header">
           <h2 class="card-title">${data.intern1}</h2>
           <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>Intern</h3>
@@ -128,8 +136,10 @@ inquirer.prompt([
           </ul>
       </div>
   </div>
-  
+   </div>
+    </div>
 </body>
 </html>
-        `)
-    })
+        `
+    );
+  });
